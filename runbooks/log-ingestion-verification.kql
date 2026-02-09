@@ -1,0 +1,8 @@
+// Runbook: Log Ingestion Verification
+// Purpose: Validate Log Analytics data ingestion
+// Used by: Application Manager during monitoring checks
+
+search *
+| where TimeGenerated > ago(24h)
+| summarize count() by $table
+| order by count_ desc
