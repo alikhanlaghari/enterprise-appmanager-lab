@@ -8,3 +8,7 @@ Purpose:
   Implements a simple backend workflow to validate API integration and successful execution using a 200 OK response.
 
 - Validated direct POST test: 200 OK
+
+## Workflow Evidence
+
+![Logic App workflow](../screenshots/phase-03-logic-app.png)
