@@ -39,18 +39,12 @@ search *
 
 This method provides visibility into which telemetry tables are actively receiving data and supports early detection of monitoring gaps.
 
-## Operational Validation
+## Operational Runbooks
 
-### API Invocation Test (Service-Level Validation)
+Monitoring validation and operational checks for this phase are documented under:
 
-# Test via APIM (subscription key required)
-$subKey = "**************************"
-$uri = "https://apim-eam-lab.azure-api.net/enterprise-workflow/When_an_HTTP_request_is_received/paths/invoke"
-
-Invoke-RestMethod -Method Post -Uri $uri `
-  -Headers @{ "Ocp-Apim-Subscription-Key" = $subKey } `
-  -ContentType "application/json" `
-  -Body '{"input":"healthcheck"}'
+- `runbooks/api-smoke-test.ps1`
+- `runbooks/log-ingestion-verification.kql`
 
 This test validates:
 
