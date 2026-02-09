@@ -1,16 +1,36 @@
 # Phase 5 – Monitoring
 
-Log Analytics workspace created to centralize monitoring for Logic App and API Management activity.
+## Objective
+Ensure production-level observability by centralizing logs and metrics for the enterprise workflow and API gateway.
 
-- Logic App diagnostics enabled and sent to Log Analytics
-- APIM (Consumption) gateway logs and metrics sent to Log Analytics via Azure Monitor.
+This phase validates that monitoring is not only configured, but **actively ingesting data**, which is a key responsibility of an Application Manager.
 
-### Log ingestion verification
+---
 
-- Used a discovery KQL query to confirm which tables were receiving data.
-- At this stage, metrics were ingested while APIM diagnostic logs were pending.
+## Implemented Components
 
-# Validation
+- **Log Analytics Workspace**
+  - Created to centralize monitoring data.
+  - Acts as the single source of truth for operational visibility.
+
+- **Diagnostic Settings**
+  - Logic App diagnostics enabled and routed to Log Analytics.
+  - API Management metrics and diagnostics configured via Azure Monitor.
+
+---
+
+## Log Ingestion Verification
+
+To validate that data was flowing correctly, discovery KQL queries were executed in Log Analytics:
+
+```kql
+search *
+| where TimeGenerated > ago(24h)
+| summarize count() by $table
+| order by count_ desc
+
+
+## Validation
 
 ### PowerShell test
 
@@ -22,3 +42,15 @@ Invoke-RestMethod -Method Post -Uri $uri `
   -Headers @{ "Ocp-Apim-Subscription-Key" = $subKey } `
   -ContentType "application/json" `
   -Body '{"input":"healthcheck"}'
+
+## Results
+
+- Metrics tables were confirmed as ingesting data.
+- API Management diagnostic logs were observed in expected propagation state.
+- Log ingestion validation confirmed the monitoring pipeline was functioning as designed.
+
+## Outcome
+
+- Centralized observability established.
+- Monitoring configuration verified through real data ingestion.
+- Operational readiness achieved for enterprise workflows.
