@@ -29,6 +29,7 @@ search *
 | summarize count() by $table
 | order by count_ desc
 
+---
 
 ## Validation
 
@@ -42,12 +43,14 @@ Invoke-RestMethod -Method Post -Uri $uri `
   -Headers @{ "Ocp-Apim-Subscription-Key" = $subKey } `
   -ContentType "application/json" `
   -Body '{"input":"healthcheck"}'
+---
 
 ## Results
 
 - Metrics tables were confirmed as ingesting data.
 - API Management diagnostic logs were observed in expected propagation state.
 - Log ingestion validation confirmed the monitoring pipeline was functioning as designed.
+---
 
 ## Outcome
 
