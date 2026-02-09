@@ -4,4 +4,5 @@ API Management instance created to act as a controlled entry point in front of b
 
 - Logic App imported into APIM as backend API
 - Successful 200 OK response verified via APIM test console
-
+- Subscription key required for access
+- Verified 200 with key; verified failure without key
