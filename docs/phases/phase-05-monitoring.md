@@ -63,6 +63,15 @@ This test validates:
 - API Management diagnostic logs observed in expected propagation state.
 - Telemetry pipelines verified as correctly configured and operational.
 
+## Monitoring Evidence
+
+### Log Analytics – Ingestion Verification
+![Log Analytics ingestion](../screenshots/phase-05-log-analytics.png)
+
+### API Management – Successful Invocation
+![APIM test result](../screenshots/phase-05-apim-test.png)
+
+
 These results confirm that the service is observable and supportable under normal operating conditions.
 
 ### Outcome
