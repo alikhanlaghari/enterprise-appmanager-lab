@@ -1,6 +1,7 @@
 # Phase 4 – API Management (Front Door) & Secure Workflow Exposure
 
-# Objective
+
+## Objective
 
 Expose the internal Logic App workflow through Azure API Management (APIM) to provide controlled, secure, and governed access for external consumers.
 
@@ -24,7 +25,7 @@ Direct access to the Logic App endpoint is avoided. All external traffic is rout
 - Subscription key required via Ocp-Apim-Subscription-Key header
 - Unauthorized requests correctly rejected with 401
 - Backend Logic App protected from direct public exposure
-- 
+  
 ## Validation & Testing
 
 API tested successfully using:
