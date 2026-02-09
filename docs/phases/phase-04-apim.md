@@ -33,6 +33,10 @@ API tested successfully using:
 - APIM Test Console
 - PowerShell (Invoke-RestMethod)
 
+## API Management Evidence
+
+![API Management configuration](../screenshots/phase-04-apim.png)
+
 ## Confirmed:
 
 - 404 errors for incorrect paths
